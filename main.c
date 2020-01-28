@@ -65,6 +65,8 @@ int main(){
 		printf("((unsigned long) helper.mantissa_hi << 16) = ");printf("%i" , ((unsigned long) helper.mantissa_hi << 16));
 		printf("\n");
 		mantissa += ((unsigned long) helper.mantissa_hi << 16);
+		printf("mantissa += ((unsigned long) helper.mantissa_hi << 16) = ");
+		printf("%i", mantissa);
 		mantissa += 0x00800000;
 		signed char exponent = (signed char) helper.exponent - 127;
 
