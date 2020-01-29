@@ -52,4 +52,16 @@ int main(){
 		printf("Fedor mantissa ");	printf("%i" ,mantissa);
 		printf("\n+++++++++++++++++++++++++++++++++++++++++++=");
 	}
+
+	printf("\n=============================================");
+
+	helper2.f = 567865353;
+	printf("%f", helper2.f);
+	unsigned long	mantissa = helper2.mant;
+    mantissa += 8388608;
+    printf("Fedor mantissa ");  printf("%i" ,mantissa);
+	signed char exponent = (signed char) helper2.exp - 127;
+	printf("\n");
+	printf("получена экспонента ");printf("%i", exponent);
+
 }
