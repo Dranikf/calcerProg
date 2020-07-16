@@ -4,7 +4,12 @@ import ctypes
 
 filename = input('Ender image name: '); 
 #file opening
-im = Image.open(filename);
+try:
+    im = Image.open(filename);
+except FileNotFoundError:
+    print('file not found, please try again');
+    input();
+    exit();
 #getting size
 size = im.size;
 # getting image as array
@@ -22,8 +27,9 @@ def conv32_16(r , g , b):
 
 
 filename = 'result.bin';
-f_obj = open(filename, 'wb');
 
+
+f_obj = open(filename, 'wb');
 
 # writing to file
 for i in list(range(0 , size[1])):
@@ -34,5 +40,4 @@ for i in list(range(0 , size[1])):
 f_obj.close();
 
 print('saved as ' + filename);
-
-im.show();
+input();
