@@ -1,4 +1,4 @@
-import getch;
+import msvcrt;
 
 def byteArrayBitsRev(array):
     """function for revercing bits in bytes of byteArray"""
@@ -40,7 +40,7 @@ readingMode = 0; #0 - reading header; 1 - reading data
 
 txtFilename = input('Enter file name: ');
 try:    
-    read_obj = open(txtFilename, 'r');
+    read_obj = open(txtFilename, 'r', encoding = 'utf8');
 except FileNotFoundError:
     print("can't find " + txtFilename);
     input('press Enter to finish program.');
@@ -49,11 +49,11 @@ except FileNotFoundError:
 
 print('need reverece bits? (y/n)');
 while True:
-    temp = getch.getch();
-    if temp == 'y':
+    temp = msvcrt.getch();
+    if temp == b'y':
         revFlag = True;
         break;
-    elif temp == 'n':
+    elif temp == b'n':
         revFlag = False;
         break;
 
