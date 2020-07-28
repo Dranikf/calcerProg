@@ -1,4 +1,4 @@
-from getch import getch;
+from msvcrt import getch;
 import os;
 
 def readBinFileName(filename):
@@ -13,9 +13,9 @@ def readBinFileName(filename):
             print('other - for try again');
 
             temp = getch();
-            if temp == 's':
+            if temp == b's':
                 return None;
-            elif temp == 'e':
+            elif temp == b'e':
                 return 0;
             else:
                 continue;
@@ -41,7 +41,7 @@ except FileNotFoundError:
     input();
 
 res_file = open('result.bin', 'wb');
-sizes_file = open('sfile' , 'w');
+sizes_file = open('sfile.txt' , 'w');
 
 while True:
     binName = descFile.readline();
@@ -59,6 +59,9 @@ while True:
         sizes_file.writelines(hex(file_data[1]) + '\n');
 
 
+print('saved as result.bin');
+input();
 descFile.close();
 res_file.close();
+sizes_file.close();
 # MAIN -----------------------------------------
